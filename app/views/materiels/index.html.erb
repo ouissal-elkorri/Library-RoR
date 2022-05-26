@@ -1,0 +1,37 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Les materiels créés</h1>
+<p>On a que les PCs maintenant</p>
+
+<div id="materiels">
+  <table class="table table-dark table-striped table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Disponibilte</th>
+        <th scope="col">Etat</th>
+        <th scope="col">Affichage</th>
+        <th scope="col">Modification</th>
+        <th scope="col">Suppression</th>
+        <th scope="col">Emprunte</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @materiels.each do |materiel| %>
+        <tr>
+          <th scope="row"><%= materiel.id %></th>
+          <td><%= materiel.name %></td>
+          <td><%= materiel.disponibilte %></td>
+          <td><%= materiel.etat %></td>
+          <td><%= link_to "Afficher", materiel, class:"btn btn-success" %></td>
+          <td><%= link_to "Modifier", edit_materiel_path(materiel), class:"btn btn-secondary" %></td>
+          <td><%= button_to "Supprimer", @materiel, method: :delete, class:"btn btn-danger" %></td>
+          <td><%= button_to "Emprunter", @materiel, class:"btn btn-outline-warning" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<%= link_to "New materiel", new_materiel_path, class:"btn btn-primary"  %>

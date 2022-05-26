@@ -1,0 +1,32 @@
+<h1 class="text-center">Se connecter</h1>
+<form class="row position-absolute top-50 start-50 translate-middle">
+  <%= form_with url: sign_in_path do |f| %>
+    <div class="row mb-6">
+      <div class="col-md-6">
+        <%= f.label 'prenom:', class:"form-label" %><br>
+        <%= f.text_field :prenom, id: 'prenom', class:"form-control" %>
+      </div>
+    </div>
+
+    <div class="row mb-6">
+      <div class="col-md-6">
+        <%= f.label 'nom:', class:"form-label" %><br>
+        <%= f.text_field :nom, id: 'nom', class:"form-control" %>
+      </div>
+    </div>
+
+    <div class="row mb-6">
+      <div class="col-md-6">
+        <%= f.label 'password:', class:"form-label" %><br>
+        <%= f.password_field :password, id: 'password', class:"form-control" %>
+      </div>
+    </div>
+    
+    <div class="row mb-6">
+      <div class="col-md-6">
+       <%= link_to 'Log In', logedin_path, class:"btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
+  
+</form>

@@ -1,0 +1,45 @@
+<h1 class="text-center ">Créer un compte</h1>
+<form class="row mt-4 position-absolute top-50 start-50 translate-middle">
+  <%= form_with model: @adherent, url: sign_up_path do |f| %>
+    <div class="row mb-6">
+      <div class="col-md-6">
+      <%= f.label 'prenom', class:"form-label" %><br>
+        <%= f.text_field :prenom, class:"form-control" %>
+      </div>
+    </div>
+
+    <div class="row mb-6">
+      <div class="col-md-6">
+        <%= f.label 'nom', class:"form-label" %><br>
+        <%= f.text_field :nom, class:"form-control" %>
+      </div>
+    </div>
+
+    <div class="row mb-6">
+      <div class="col-md-6">
+        <%= f.label 'statut', class:"form-label" %><br>
+        <%= f.select :statut, ['Etudiant(e)', 'Enseignant'] %>
+      </div>
+    </div>
+
+    <div class="row mb-6">
+      <div class="col-md-6">
+        <%= f.label 'password', class:"form-label" %><br>
+        <%= f.password_field :password, class:"form-control" %>
+      </div>
+    </div>
+
+    <div class="row mb-6">
+      <div class="col-md-6">
+        <%= f.label 'password_confirmation', class:"form-label" %><br>
+        <%= f.password_field :password_confirmation, class:"form-control" %>
+      </div>
+    </div>
+
+    <div class="row mb-6">
+      <div class="col-md-6">
+        <%=  link_to 'Sign Up', logedin_path, class:"btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
+</form>

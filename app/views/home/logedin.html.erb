@@ -1,0 +1,26 @@
+<div class="container mt-4">
+    <h1 class="text-center">Bienvenue une autre fois</h1>
+    <h5 class="text-center">Cette fois ci puisque vous avez un compte, vous pouvez </h5>
+    <div class="row mt-4">
+        <div class="col-6">
+            <div class="card" style="width: 25rem;">
+                <%= image_tag "books.jpg", height: 210, class:"card-img-top" %>
+                <div class="card-body">
+                <h5 class="card-title">Emprunter un ou cinq document</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <%= link_to "Emprunter", documents_path, class:"btn btn-primary" %>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="card" style="width: 25rem;">
+                <%= image_tag "laptop.jpg", height: 210, class:"card-img-top" %>
+                <div class="card-body">
+                <h5 class="card-title">Emprunter un matériel</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <%= link_to "Emprunter un matériel (PC)", materiels_path, class:"btn btn-primary" %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

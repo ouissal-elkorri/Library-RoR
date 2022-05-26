@@ -1,0 +1,58 @@
+<p style="color: green"><%= notice %></p>
+
+<div class="container mt-4">
+
+    <h1 class="text-center" style="margin-bottom : 100px!important;">Bienvenue dans notre Bibliothèque</h1>
+    <div class="row mt-4 d-flex justify-content-center">
+      <div class="col-8">
+        <p>
+          Notre objectif est d’implémenter un programme en Ruby de gestion d’une bibliothèque.<br/>
+        - Une bibliothèque permet de créer des ressources (Documents, Adhérents, Matériels) et les emprunts.<br/>
+        - Les adhérents doivent avoir un nom et un prénom<br/>
+        - Les documents peuvent être des livres, des revues, des dictionnaires et des BD<br/>
+        - Le matériel empruntable est de type ordinateur portable<br/>
+        - Un adhèrent peut emprunter au plus cinq livres mais un seul ordinateur portable<br/>
+        <%= image_tag "bib.jpg", height: 500 %><br/>
+        
+          Dans ce siteweb vous pouvez:  <br/>
+          - Crée un adhérent et l'ajoute à la bibliothèque <br/>
+        - Crée un livre et l'ajoute à la bibliothèque <br/>
+        - Crée un ordinateur portable et l'ajoute à la bibliothèque <br/>
+        - Retourne un adhèrent correspondant à un id de personne <br/>
+        - Retourne un document correspondant à un ISBN <br/>
+        - Retourne un matériel correspondant à un id <br/>
+        - Retourne la collection des adhérents de la bibliothèque <br/>
+        - Retourne la liste des documents de la bibliothèque <br/>
+        - Retourne la collection des matériels de la bibliothèque <br/>
+        - Ajoute une personne aux auteurs d’un livre. <br/>
+        - Retourne un auteur d’un livre correspondant à un id <br/>
+        - Retourne L'ensemble des Ids des auteurs <br/>
+        - Retourne L'ensemble des Id des matériels <br/>
+        - Supprime un adhérent de la bibliothèque <br/>
+        - Supprime un matériel de la bibliothèque <br/>
+        - Supprime un document de la bibliothèque <br/>
+        - Emprunter un Ordinateur <br/>
+        - Emprunter un Livre <br/>
+        - Rendre un Ordinateur <br/>
+        - Rendre un Livre <br/>
+        - Enregistre la bibliothèque dans des fichiers CSV <br/>
+        - Charge la bibliothèque à partir des fichiers CSV <br/>
+        </p>
+    
+      <br/><br/><br/><br/>
+
+      <div class="d-flex justify-content-center">
+        <% if Current.adherent %>
+          Logged in as: <%= Current.adherent.email %><br>
+          <= link_to 'Edit Password', edit_password_path %>
+          <%= button_to 'Logout', logout_path, method: :delete %>
+          <% else %>
+          <%= link_to 'Créer un compte', sign_up_path, class:"btn btn-primary"  %>
+          or
+          <%= link_to 'Se connecter', sign_in_path, class:"btn btn-primary"  %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
